@@ -41,7 +41,7 @@
 				$ns_minimal_description = get_bloginfo( 'description', 'display' );
 				if ( $ns_minimal_description || is_customize_preview() ) :
 					?>
-					<p class="site-description"><?php echo wp_kses_post( $ns_minimal_description ); /* WPCS: xss ok. */ ?></p>
+					<p class="site-description"><?php echo wp_kses_post( $ns_minimal_description ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 				<?php endif; ?>
 			</div>
 
@@ -51,10 +51,18 @@
 			<?php endif; // End header image check. ?>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle"><?php esc_html_e( 'Menu', 'ns-minimal' ); ?></button>
-				<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ns-minimal' ); ?></a>
+
+        <button class="menu-toggle hamburger hamburger--spin" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+            <p class="hamburger-inner-text"><?php esc_html_e( 'Menu', 'ns-minimal' ); ?></p>
+          </span>
+        </button>
+
+        <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ns-minimal' ); ?></a>
 
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu-wrap' ) ); ?>
+
 			</nav><!-- #site-navigation -->
 
 		</div>

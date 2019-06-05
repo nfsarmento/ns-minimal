@@ -145,11 +145,11 @@ msgstr ""
 msgid "Back to top"
 msgstr ""
 
-#: header.php:54
+#: header.php:58
 msgid "Menu"
 msgstr ""
 
-#: header.php:55
+#: header.php:62
 msgid "Skip to content"
 msgstr ""
 
