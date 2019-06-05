@@ -66,45 +66,45 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: page-templates/content-none.php:21
+#: template-parts/content-none.php:21
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: page-templates/content-none.php:33
+#: template-parts/content-none.php:33
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: page-templates/content-none.php:38
+#: template-parts/content-none.php:38
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: page-templates/content-page.php:19 page-templates/content-single.php:32 page-templates/content.php:42
+#: template-parts/content-page.php:19 template-parts/content-single.php:32 template-parts/content.php:42
 msgid "Pages:"
 msgstr ""
 
-#: page-templates/content-page.php:25
+#: template-parts/content-page.php:25
 msgid "Edit"
 msgstr ""
 
-#: page-templates/content.php:21
+#: template-parts/content.php:21
 msgid "Leave a comment"
 msgstr ""
 
-#: page-templates/content.php:21
+#: template-parts/content.php:21
 msgid "1 Comment"
 msgstr ""
 
-#: page-templates/content.php:21
+#: template-parts/content.php:21
 msgid "% Comments"
 msgstr ""
 
-#: page-templates/content.php:39 functions.php:253
+#: template-parts/content.php:39 functions.php:253
 msgid "Read more"
 msgstr ""
 

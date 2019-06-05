@@ -1,7 +1,7 @@
 === NS Minimal ===
 Contributors: nunosarmento
 Requires at least: WordPress 4.0
-Version: 1.0.2
+Version: 1.0.3
 Requires at least: 5.0
 Requires PHP: 5.6
 Tested up to: 5.2
@@ -32,6 +32,10 @@ Burger menu added
 Theme GPL compatible images
 Mention the dual license of font awesome
 Fix phpcs warnings
+
+= 1.0.3 =
+* Released: June 05, 2019
+Meaningful names folder names
 
 Initial release
 
