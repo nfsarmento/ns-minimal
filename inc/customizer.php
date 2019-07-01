@@ -239,19 +239,6 @@ function ns_minimal_theme_customizer( $wp_customize ) {
 		'settings' => 'ns_minimal_top_menu_link_hover_color',
 	) ) );
 
-	// START HERE > COLORS: Sub Top Menu Background Color
-  //   $wp_customize->add_setting( 'ns_minimal_sub_top_menu_bg_color', array(
-  //       'default' => '#ffffff',
-  //       'sanitize_callback' => 'sanitize_hex_color',
-  //   ) );
-	//
-	// $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ns_minimal_sub_top_menu_bg_color', array(
-	// 	'label' => __( 'Sub Top Menu Background', 'ns-minimal' ),
-	// 	'priority' => 70,
-	// 	'section' => 'ns_minimal_colors',
-	// 	'settings' => 'ns_minimal_sub_top_menu_bg_color',
-	// ) ) );
-
 	// START HERE > COLORS: Main Menu Background Color
     $wp_customize->add_setting( 'ns_minimal_main_menu_bg_color', array(
         'default' => '#ffffff',
@@ -592,7 +579,6 @@ if ( ! function_exists( 'ns_minimal_apply_style' ) ) :
 			 get_theme_mod('ns_minimal_top_menu_bg_color') ||
 			 get_theme_mod('ns_minimal_top_menu_link_color') ||
 			 get_theme_mod('ns_minimal_top_menu_link_hover_color') ||
-			 // get_theme_mod('ns_minimal_sub_top_menu_bg_color') ||
 			 get_theme_mod('ns_minimal_main_menu_bg_color') ||
 			 get_theme_mod('ns_minimal_main_menu_link_color') ||
 			 get_theme_mod('ns_minimal_main_menu_link_hover_color') ||
@@ -657,12 +643,6 @@ if ( ! function_exists( 'ns_minimal_apply_style' ) ) :
 					#top-navigation a:hover,
 					#top-navigation button.menu-toggle a:hover {
 						color: <?php echo esc_attr( get_theme_mod( 'ns_minimal_top_menu_link_hover_color' ) );  ?>;
-					}
-				<?php endif; ?>
-
-				<?php if ( get_theme_mod('ns_minimal_sub_top_menu_bg_color') ) : ?>
-					#top-navigation ul ul {
-						background-color: <?php echo esc_attr( get_theme_mod( 'ns_minimal_sub_top_menu_bg_color' ) );  ?>;
 					}
 				<?php endif; ?>
 

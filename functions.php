@@ -213,16 +213,49 @@ function ns_minimal_scroll_to_top() {
 }
 add_action('wp_footer', 'ns_minimal_scroll_to_top');
 
+
+
+/**
+ * Add Google Fonts URL
+ * ref: https://github.com/WordPress/twentyseventeen/blob/master/functions.php#L127
+ */
+function ns_minimal_fonts_url() {
+	$fonts_url = '';
+	/**
+	 * Translators: If there are characters in your language that are not
+	 * supported by Libre Frankin, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$nunito_sans = _x( 'on', 'nunito_sans font: on or off', 'ns-minimal' );
+	if ( 'off' !== $nunito_sans ) {
+		$font_families = array();
+		$font_families[] = 'Nunito Sans:300,400,400i,700,700i';
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+	return esc_url_raw( $fonts_url );
+}
+
 /**
  * Add Google Fonts
- * Translators: (&subset=latin-ext) If there are characters in your language that are not
  */
 function ns_minimal_add_google_fonts() {
-	wp_register_style('ns-minimal-google-font', 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700&subset=latin-ext');
-	wp_enqueue_style( 'ns-minimal-google-font');
+		wp_enqueue_style( 'ns-minimal-google-font', ns_minimal_fonts_url(), array(), null );
 }
 add_action('wp_enqueue_scripts', 'ns_minimal_add_google_fonts');
 
+
+/**
+ * Registers an editor stylesheet for the current theme.
+ */
+function ns_minimal_theme_add_editor_styles() {
+    $font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Nunito+Sans:300,400,400italic,700,700italic&subset=latin-ext' );
+    add_editor_style( $font_url );
+}
+add_action( 'after_setup_theme', 'ns_minimal_theme_add_editor_styles' );
 
 /**
  * Posts navigation function

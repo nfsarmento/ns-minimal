@@ -46,6 +46,13 @@ Fixed WordPress social icon widget & remove medium icon
 Include wp_body_open
 Fixed text on 404 page
 
+= 1.0.5 =
+* Released: July 01, 2019
+Fixed remove function_exists in `inc/template-tags.php`
+Add google font url function from twentyseventeen to support font characters that are not supported by the enqueued google font
+Add font italics
+Remove comment functions
+Wrap wp_body_open in a `function_exists()`
 
 Initial release
 

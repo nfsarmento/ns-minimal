@@ -14,13 +14,18 @@
 <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php endif; ?>
-
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
-<?php wp_body_open(); ?>
+<?php
+  if ( function_exists( 'wp_body_open' ) ) {
+      wp_body_open();
+  } else {
+      do_action( 'wp_body_open' );
+  }
+?>
 
 <div id="page" class="hfeed site">
 
