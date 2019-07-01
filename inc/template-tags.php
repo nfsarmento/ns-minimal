@@ -109,17 +109,3 @@ if ( ! function_exists( 'ns_minimal_entry_footer' ) ) :
 		);
 	}
 endif;
-
-/**
-/**
- * Flush out the transients used in ns_minimal_categorized_blog.
- */
-function ns_minimal_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-	// Like, beat it. Dig?
-	delete_transient( 'ns_minimal_categories' );
-}
-add_action( 'edit_category', 'ns_minimal_category_transient_flusher' );
-add_action( 'save_post',     'ns_minimal_category_transient_flusher' );

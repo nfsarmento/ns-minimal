@@ -19,6 +19,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<?php wp_body_open(); ?>
+
 <div id="page" class="hfeed site">
 
 	<header id="masthead" class="site-header" role="banner">
@@ -61,7 +64,11 @@
 
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ns-minimal' ); ?></a>
 
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu-wrap' ) ); ?>
+				<?php wp_nav_menu( array(
+          'theme_location' => 'primary',
+          'container_class' => 'menu-wrap',
+          'menu_id' => 'top-navigation'
+        ) ); ?>
 
 			</nav><!-- #site-navigation -->
 

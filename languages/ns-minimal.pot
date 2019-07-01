@@ -29,7 +29,7 @@ msgstr ""
 
 #: 404.php:20
 msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
+"It looks like nothing was found at this location."
 "below or a search?"
 msgstr ""
 
@@ -62,7 +62,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-none.php:12
+#: template-parts/content-none.php:12
 msgid "Nothing Found"
 msgstr ""
 

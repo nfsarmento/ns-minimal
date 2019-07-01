@@ -6,9 +6,7 @@
  * @since ns-minimal 1.0.0
  */
 
-if ( ! function_exists( 'ns_minimal_setup' ) ) :
-
-	function ns_minimal_setup() {
+function ns_minimal_setup() {
 
 	/*
    * Make theme available for translation.
@@ -70,7 +68,6 @@ if ( ! function_exists( 'ns_minimal_setup' ) ) :
 	// enable feature custom header
 	add_theme_support( 'custom-header' );
 }
-endif; // ns_minimal_setup
 add_action( 'after_setup_theme', 'ns_minimal_setup' );
 
 /**
@@ -218,10 +215,22 @@ add_action('wp_footer', 'ns_minimal_scroll_to_top');
 
 /**
  * Add Google Fonts
+ * Translators: (&subset=latin-ext) If there are characters in your language that are not
  */
 function ns_minimal_add_google_fonts() {
-
-wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700');
-	wp_enqueue_style( 'ns-minimal-googleFonts');
+	wp_register_style('ns-minimal-google-font', 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700&subset=latin-ext');
+	wp_enqueue_style( 'ns-minimal-google-font');
 }
 add_action('wp_enqueue_scripts', 'ns_minimal_add_google_fonts');
+
+
+/**
+ * Posts navigation function
+ */
+function ns_minimal_paging_nav() {
+	the_posts_pagination(array(
+		'prev_text' => '<i class="fa fa-angle-double-left"></i>',
+		'next_text' => '<i class="fa fa-angle-double-right"></i>',
+		'before_page_number' => '<span class="meta-nav screen-reader-text"></span>'
+	));
+}

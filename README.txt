@@ -1,7 +1,7 @@
 === NS Minimal ===
 Contributors: nunosarmento
 Requires at least: WordPress 4.0
-Version: 1.0.3
+Version: 1.0.4
 Requires at least: 5.0
 Requires PHP: 5.6
 Tested up to: 5.2
@@ -36,6 +36,16 @@ Fix phpcs warnings
 = 1.0.3 =
 * Released: June 05, 2019
 Meaningful names folder names
+
+= 1.0.4 =
+* Released: July 01, 2019
+Fixed missing post nav function
+Fixed customisation nav menu colours
+Fixed google fonts
+Fixed WordPress social icon widget & remove medium icon
+Include wp_body_open
+Fixed text on 404 page
+
 
 Initial release
 

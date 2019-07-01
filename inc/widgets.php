@@ -57,7 +57,6 @@ class ns_minimal_social extends WP_Widget {
 		$tumblr = ! empty( $instance['tumblr'] ) ? $instance['tumblr'] : '';
 		$wordpress = ! empty( $instance['wordpress'] ) ? $instance['wordpress'] : '';
 		$soundcloud = ! empty( $instance['soundcloud'] ) ? $instance['soundcloud'] : '';
-		$medium = ! empty( $instance['medium'] ) ? $instance['medium'] : '';
 		$snapchat = ! empty( $instance['snapchat'] ) ? $instance['snapchat'] : '';
 
 
@@ -71,7 +70,7 @@ class ns_minimal_social extends WP_Widget {
 			echo '<span><a href="' . esc_url($feed) . '" title="' . esc_attr( 'Feed', 'ns-minimal' ) . '" class="social social-feed" target="' . esc_attr( '_blank', 'ns-minimal' ) . '"></a></span>';
 
 		if ( $email )
-			echo '<span><a href="mailto:' . esc_url($email) . '" title="' . esc_attr( 'Email', 'ns-minimal' ) . '" class="social social-email" target="' . esc_attr( '_blank', 'ns-minimal' ) . '"></a></span>';
+			echo '<span><a href="mailto:' . $email . '" title="' . esc_attr( 'Email', 'ns-minimal' ) . '" class="social social-email" target="' . esc_attr( '_blank', 'ns-minimal' ) . '"></a></span>';
 
 		if ( $linkedin )
 			echo '<span><a href="' . esc_url($linkedin) . '" title="' . esc_attr( 'Linkedin', 'ns-minimal' ) . '" class="social social-linkedin" target="' . esc_attr( '_blank', 'ns-minimal' ) . '"></a></span>';
@@ -124,9 +123,6 @@ class ns_minimal_social extends WP_Widget {
 		if ( $soundcloud )
 			echo '<span><a href="' . esc_url($soundcloud) . '" title="' . esc_attr( 'Soundcloud', 'ns-minimal' ) . '" class="social social-soundcloud" target="' . esc_attr( '_blank', 'ns-minimal' ) . '"></a></span>';
 
-		if ( $medium )
-			echo '<span><a href="' . esc_url($medium) . '" title="' . esc_attr( 'Medium', 'ns-minimal' ) . '" class="social social-pk-medium" target="' . esc_attr( '_blank', 'ns-minimal' ) . '"></a></span>';
-
 		if ( $snapchat )
 			echo '<span><a href="' . esc_url($snapchat) . '" title="' . esc_attr( 'Snapchat', 'ns-minimal' ) . '" class="social social-snapchat" target="' . esc_attr( '_blank', 'ns-minimal' ) . '"></a></span>';
 
@@ -163,7 +159,6 @@ class ns_minimal_social extends WP_Widget {
 		$instance['tumblr'] = ( ! empty( $new_instance['tumblr'] ) ) ? esc_url_raw( $new_instance['tumblr'] ) : '';
 		$instance['wordpress'] = ( ! empty( $new_instance['wordpress'] ) ) ? esc_url_raw( $new_instance['wordpress'] ) : '';
 		$instance['soundcloud'] = ( ! empty( $new_instance['soundcloud'] ) ) ? esc_url_raw( $new_instance['soundcloud'] ) : '';
-		$instance['medium'] = ( ! empty( $new_instance['medium'] ) ) ? esc_url_raw( $new_instance['medium'] ) : '';
 		$instance['snapchat'] = ( ! empty( $new_instance['snapchat'] ) ) ? esc_url_raw( $new_instance['snapchat'] ) : '';
 
 		return $instance;
@@ -196,7 +191,6 @@ class ns_minimal_social extends WP_Widget {
 		$tumblr = ! empty( $instance['tumblr'] ) ? $instance['tumblr'] : '';
 		$wordpress = ! empty( $instance['wordpress'] ) ? $instance['wordpress'] : '';
 		$soundcloud = ! empty( $instance['soundcloud'] ) ? $instance['soundcloud'] : '';
-		$medium = ! empty( $instance['medium'] ) ? $instance['medium'] : '';
 		$snapchat = ! empty( $instance['snapchat'] ) ? $instance['snapchat'] : '';
 		?>
 
@@ -291,18 +285,13 @@ class ns_minimal_social extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'WordPress' ) ); ?>"><?php esc_html_e('WordPress:','ns-minimal'); ?></label>
-			<input id="<?php echo esc_attr( $this->get_field_id( 'WordPress' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'WordPress' ) ); ?>" value="<?php echo esc_url( $wordpress ); ?>" style="width:100%;" />
+			<label for="<?php echo esc_attr( $this->get_field_id( 'wordpress' ) ); ?>"><?php esc_html_e('WordPress:','ns-minimal'); ?></label>
+			<input id="<?php echo esc_attr( $this->get_field_id( 'wordpress' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'WordPress' ) ); ?>" value="<?php echo esc_url( $wordpress ); ?>" style="width:100%;" />
 		</p>
 
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'soundcloud' ) ); ?>"><?php esc_html_e('Soundcloud:','ns-minimal'); ?></label>
 			<input id="<?php echo esc_attr( $this->get_field_id( 'soundcloud' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'soundcloud' ) ); ?>" value="<?php echo esc_url( $soundcloud ); ?>" style="width:100%;" />
-		</p>
-
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'medium' ) ); ?>"><?php esc_html_e('Medium:','ns-minimal'); ?></label>
-			<input id="<?php echo esc_attr( $this->get_field_id( 'medium' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'medium' ) ); ?>" value="<?php echo esc_url( $medium ); ?>" style="width:100%;" />
 		</p>
 
 		<p>
