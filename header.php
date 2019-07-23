@@ -33,6 +33,8 @@
 
 		<div class="container">
 
+      <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ns-minimal' ); ?></a>
+
 			<?php the_custom_logo(); ?>
 
 			<div class="site-branding">
@@ -66,8 +68,6 @@
             <p class="hamburger-inner-text"><?php esc_html_e( 'Menu', 'ns-minimal' ); ?></p>
           </span>
         </button>
-
-        <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ns-minimal' ); ?></a>
 
 				<?php wp_nav_menu( array(
           'theme_location' => 'primary',

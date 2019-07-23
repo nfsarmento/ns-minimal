@@ -149,7 +149,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: header.php:62
+#: header.php:36
 msgid "Skip to content"
 msgstr ""
 
@@ -158,7 +158,7 @@ msgid "Start Here"
 msgstr ""
 
 #: inc/customizer.php:58
-msgid "Set your container width, colors and Google Analytics."
+msgid "Set colors, menus, widgets, header and css."
 msgstr ""
 
 #: inc/customizer.php:64
@@ -193,150 +193,168 @@ msgstr ""
 msgid "You can customize the Footer."
 msgstr ""
 
-#: inc/customizer.php:102
+#: inc/customizer.php:95
+msgid "Social Icons Style."
+msgstr ""
+
+#: inc/customizer.php:96
+msgid "It changes the color of the social icons widget"
+msgstr ""
+
+
+#: inc/customizer.php:103
 msgid "Colors"
 msgstr ""
 
-#: inc/customizer.php:109 inc/customizer.php:152
+#: inc/customizer.php:110
 msgid "Background Color"
 msgstr ""
 
-#: inc/customizer.php:116
+#: inc/customizer.php:117
 msgid "Background Image"
 msgstr ""
 
-#: inc/customizer.php:123
+#: inc/customizer.php:124
 msgid "Site Identity"
 msgstr ""
 
-#: inc/customizer.php:130
+#: inc/customizer.php:131
 msgid "Header Image"
 msgstr ""
 
-#: inc/customizer.php:137
+#: inc/customizer.php:138
 msgid "Static Front Page"
 msgstr ""
 
+#: inc/customizer.php:153
+msgid "Background Color"
+msgstr "
 
-#: inc/customizer.php:196
+#: inc/customizer.php:166
+msgid "Icon Color"
+msgstr ""
+
+#: inc/customizer.php:179
+msgid "Circle or Square"
+msgstr "
+
+
+#: inc/customizer.php:197
 msgid "Header Title"
 msgstr ""
 
-#: inc/customizer.php:209
+#: inc/customizer.php:210
 msgid "Top Menu Background"
 msgstr ""
 
-#: inc/customizer.php:222
+#: inc/customizer.php:223
 msgid "Top Menu Link"
 msgstr ""
 
-#: inc/customizer.php:235
+#: inc/customizer.php:236
 msgid "Top Menu Link Hover"
 msgstr ""
 
-#: inc/customizer.php:248
+#: inc/customizer.php:249
 msgid "Sub Top Menu Background"
 msgstr ""
 
-#: inc/customizer.php:261
+#: inc/customizer.php:262
 msgid "Main Menu Background"
 msgstr ""
 
-#: inc/customizer.php:274
+#: inc/customizer.php:275
 msgid "Main Menu Link"
 msgstr ""
 
-#: inc/customizer.php:287
+#: inc/customizer.php:288
 msgid "Main Menu Link Hover"
 msgstr ""
 
-#: inc/customizer.php:300
+#: inc/customizer.php:301
 msgid "Sub Main Menu Background"
 msgstr ""
 
-#: inc/customizer.php:313
+#: inc/customizer.php:314
 msgid "Body Font"
 msgstr ""
 
-#: inc/customizer.php:326
+#: inc/customizer.php:327
 msgid "Headings Font"
 msgstr ""
 
-#: inc/customizer.php:339
+#: inc/customizer.php:340
 msgid "Link"
 msgstr ""
 
-#: inc/customizer.php:352
+#: inc/customizer.php:353
 msgid "Link Hover"
 msgstr ""
 
-#: inc/customizer.php:365
+#: inc/customizer.php:366
 msgid "Post Title"
 msgstr ""
 
-#: inc/customizer.php:378
+#: inc/customizer.php:379
 msgid "Post Title Hover"
 msgstr ""
 
-#: inc/customizer.php:391
+#: inc/customizer.php:392
 msgid "Widget Background"
 msgstr ""
 
-#: inc/customizer.php:404
+#: inc/customizer.php:405
 msgid "Widget Title"
 msgstr ""
 
-#: inc/customizer.php:417
+#: inc/customizer.php:418
 msgid "Blockquote"
 msgstr ""
 
-#: inc/customizer.php:430
+#: inc/customizer.php:431
 msgid "Button"
 msgstr ""
 
-#: inc/customizer.php:443
+#: inc/customizer.php:444
 msgid "Button Text"
 msgstr ""
 
-#: inc/customizer.php:456
+#: inc/customizer.php:457
 msgid "Pagination Current"
 msgstr ""
 
-#: inc/customizer.php:469
+#: inc/customizer.php:470
 msgid "Pagination Next"
 msgstr ""
 
-#: inc/customizer.php:482
+#: inc/customizer.php:483
 msgid "Pagination Text"
 msgstr ""
 
-#: inc/customizer.php:495
+#: inc/customizer.php:496
 msgid "Footer Background"
 msgstr ""
 
-#: inc/customizer.php:508
+#: inc/customizer.php:509
 msgid "Footer Text"
 msgstr ""
 
-#: inc/customizer.php:521
+#: inc/customizer.php:522
 msgid "Footer Link"
 msgstr ""
 
-#: inc/customizer.php:534
+#: inc/customizer.php:535
 msgid "Footer Widget Background"
 msgstr ""
 
-#: inc/customizer.php:547
+#: inc/customizer.php:548
 msgid "Footer Widget Title"
 msgstr ""
 
-#: inc/customizer.php:560
+#: inc/customizer.php:561
 msgid "Header Background"
 msgstr ""
 
-#: inc/customizer.php:573
-msgid "Box Color"
-msgstr ""
 
 #: inc/template-tags.php:28
 #, php-format

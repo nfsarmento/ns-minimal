@@ -335,10 +335,14 @@ class ns_minimal_about extends WP_Widget {
     /**
      * Upload the Javascripts for the media uploader
      */
-    public function upload_scripts()
+    public function upload_scripts($hook)
     {
         wp_enqueue_script('media-upload');
         wp_enqueue_script('thickbox');
+
+				if( $hook != 'widgets.php' )
+				return;
+				
         wp_enqueue_script('upload_media_widget', get_template_directory_uri() . '/js/upload-media.js', array('jquery'));
 
         wp_enqueue_style('thickbox');

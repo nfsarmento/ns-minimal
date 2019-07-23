@@ -55,7 +55,7 @@ function ns_minimal_theme_customizer( $wp_customize ) {
     // START HERE
     $wp_customize->add_panel( 'ns_minimal_start_here_panel', array(
         'title' => __('Theme options', 'ns-minimal'),
-        'description' => __('Set your container width, colors and Google Analytics.', 'ns-minimal'),
+        'description' => __('Set colors, menus, widgets, header and css.', 'ns-minimal'),
         'priority' => 10,
     ) );
 
