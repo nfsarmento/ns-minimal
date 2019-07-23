@@ -1,7 +1,7 @@
 === NS Minimal ===
 Contributors: nunosarmento
 Requires at least: WordPress 4.0
-Version: 1.0.4
+Version: 1.0.6
 Requires at least: 5.0
 Requires PHP: 5.6
 Tested up to: 5.2
@@ -53,6 +53,10 @@ Add google font url function from twentyseventeen to support font characters tha
 Add font italics
 Remove comment functions
 Wrap wp_body_open in a `function_exists()`
+
+= 1.0.6 =
+* Released: July 23, 2019
+Fixed missing translations and enqueued media upload script on widget admin page only
 
 Initial release
 
