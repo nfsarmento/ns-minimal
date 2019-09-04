@@ -5,7 +5,7 @@
  * @package ns-minimal
  * @since ns-minimal 1.0.0
  */
-
+if ( ! function_exists( 'ns_minimal_setup' ) ) :
 function ns_minimal_setup() {
 
 	/*
@@ -69,6 +69,7 @@ function ns_minimal_setup() {
 	add_theme_support( 'custom-header' );
 }
 add_action( 'after_setup_theme', 'ns_minimal_setup' );
+endif;
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -77,6 +78,7 @@ add_action( 'after_setup_theme', 'ns_minimal_setup' );
  *
  * @global int $content_width
  */
+if ( ! function_exists( 'ns_minimal_content_width' ) ) :
 function ns_minimal_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
@@ -84,22 +86,26 @@ function ns_minimal_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'ns_minimal_content_width', 780 );
 }
 add_action( 'after_setup_theme', 'ns_minimal_content_width', 0 );
+endif;
 
 /**
  * Custom Editor Style
  *
  * @since ns-minimal 1.0.0
  */
+if ( ! function_exists( 'ns_minimal_add_editor_styles' ) ) :
 function ns_minimal_add_editor_styles() {
     add_editor_style( 'css/editor-style.css' );
 }
 add_action( 'init', 'ns_minimal_add_editor_styles' );
+endif;
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
+if ( ! function_exists( 'ns_minimal_widgets_init' ) ) :
 function ns_minimal_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'ns-minimal' ),
@@ -142,6 +148,7 @@ function ns_minimal_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'ns_minimal_widgets_init' );
+endif;
 
 /**
  * Enqueue scripts and styles.
@@ -149,6 +156,7 @@ add_action( 'widgets_init', 'ns_minimal_widgets_init' );
  * @link https://codex.wordpress.org/Plugin_API/Action_Reference/wp_enqueue_scripts
  *
  */
+if ( ! function_exists( 'ns_minimal_scripts' ) ) :
 function ns_minimal_scripts() {
 	wp_enqueue_style( 'ns-minimal-style', get_stylesheet_uri() );
   wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.css' );
@@ -162,7 +170,7 @@ function ns_minimal_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'ns_minimal_scripts' );
-
+endif;
 
 /**
  * Custom Header feature.
@@ -196,15 +204,18 @@ require get_template_directory() . '/inc/widgets.php';
  * @link https://codex.wordpress.org/Plugin_API/Filter_Reference/excerpt_more
  *
  */
+if ( ! function_exists( 'ns_minimal_excerpt_more' ) ) :
 function ns_minimal_excerpt_more( $more ) {
 	if (is_admin()) return $more;
 	return '<a class="more-link" href="'. esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read more', 'ns-minimal' ) . '</a>';
 }
 add_filter( 'excerpt_more', 'ns_minimal_excerpt_more' );
+endif;
 
 /**
  * Add to scroll top
  */
+if ( ! function_exists( 'ns_minimal_scroll_to_top' ) ) :
 function ns_minimal_scroll_to_top() {
 	?>
 		<a href="#top" class="smoothup" title="<?php echo esc_attr( __( 'Back to top', 'ns-minimal' ) ); ?>"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
@@ -212,13 +223,13 @@ function ns_minimal_scroll_to_top() {
 	<?php
 }
 add_action('wp_footer', 'ns_minimal_scroll_to_top');
-
-
+endif;
 
 /**
  * Add Google Fonts URL
  * ref: https://github.com/WordPress/twentyseventeen/blob/master/functions.php#L127
  */
+if ( ! function_exists( 'ns_minimal_fonts_url' ) ) :
 function ns_minimal_fonts_url() {
 	$fonts_url = '';
 	/**
@@ -238,28 +249,33 @@ function ns_minimal_fonts_url() {
 	}
 	return esc_url_raw( $fonts_url );
 }
+endif;
 
 /**
  * Add Google Fonts
  */
+if ( ! function_exists( 'ns_minimal_add_google_fonts' ) ) :
 function ns_minimal_add_google_fonts() {
 		wp_enqueue_style( 'ns-minimal-google-font', ns_minimal_fonts_url(), array(), null );
 }
 add_action('wp_enqueue_scripts', 'ns_minimal_add_google_fonts');
-
+endif;
 
 /**
  * Registers an editor stylesheet for the current theme.
  */
+if ( ! function_exists( 'ns_minimal_theme_add_editor_styles' ) ) :
 function ns_minimal_theme_add_editor_styles() {
     $font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Nunito+Sans:300,400,400italic,700,700italic&subset=latin-ext' );
     add_editor_style( $font_url );
 }
 add_action( 'after_setup_theme', 'ns_minimal_theme_add_editor_styles' );
+endif;
 
 /**
  * Posts navigation function
  */
+if ( ! function_exists( 'ns_minimal_paging_nav' ) ) :
 function ns_minimal_paging_nav() {
 	the_posts_pagination(array(
 		'prev_text' => '<i class="fa fa-angle-double-left"></i>',
@@ -267,3 +283,4 @@ function ns_minimal_paging_nav() {
 		'before_page_number' => '<span class="meta-nav screen-reader-text"></span>'
 	));
 }
+endif;

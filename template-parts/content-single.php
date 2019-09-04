@@ -14,7 +14,6 @@
 		<div class="entry-meta">
 			<?php
 			ns_minimal_posted_on();
-			ns_minimal_posted_by();
 			?>
 		</div><!-- .entry-meta -->
 

@@ -10,12 +10,11 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
 			<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-			
+
 			<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
 				<?php
 				ns_minimal_posted_on();
-				ns_minimal_posted_by();
 				?>
 				<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'ns-minimal' ), __( '1 Comment', 'ns-minimal' ), __( '% Comments', 'ns-minimal' ) ); ?></span>
@@ -49,5 +48,5 @@
 		<footer class="entry-footer">
 			<?php ns_minimal_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
-		
+
 	</article><!-- #post-## -->

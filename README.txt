@@ -1,7 +1,7 @@
 === NS Minimal ===
 Contributors: nunosarmento
 Requires at least: WordPress 4.0
-Version: 1.0.6
+Version: 1.0.8
 Requires at least: 5.0
 Requires PHP: 5.6
 Tested up to: 5.2
@@ -57,6 +57,16 @@ Wrap wp_body_open in a `function_exists()`
 = 1.0.6 =
 * Released: July 23, 2019
 Fixed missing translations and enqueued media upload script on widget admin page only
+
+Initial release
+
+= 1.0.7 =
+* Released: September 2, 2019
+remove post last edited date on post single pages
+
+= 1.0.8 =
+* Released: September 2, 2019
+Amend theme url
 
 Initial release
 

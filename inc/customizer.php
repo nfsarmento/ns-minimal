@@ -11,24 +11,27 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
+if ( ! function_exists( 'ns_minimal_customize_register' ) ) :
 function ns_minimal_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 }
 add_action( 'customize_register', 'ns_minimal_customize_register' );
-
+endif;
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
+if ( ! function_exists( 'ns_minimal_customize_preview_js' ) ) :
 function ns_minimal_customize_preview_js() {
 	wp_enqueue_script( 'ns_minimal_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
 add_action( 'customize_preview_init', 'ns_minimal_customize_preview_js' );
-
+endif;
 /*
  * Customize Sanitization
  */
 // Sanitize Select
+if ( ! function_exists( 'ns_minimal_sanitize_select' ) ) :
 function ns_minimal_sanitize_select( $input, $setting ){
 
     //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
@@ -41,12 +44,13 @@ function ns_minimal_sanitize_select( $input, $setting ){
     return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 
 }
-
+endif;
 /**
  * Customizer
  *
  * @since ns-minimal 1.0.0
  */
+if ( ! function_exists( 'ns_minimal_theme_customizer' ) ) :
 function ns_minimal_theme_customizer( $wp_customize ) {
 
     /*--------------------------------------------------------------
@@ -564,6 +568,7 @@ function ns_minimal_theme_customizer( $wp_customize ) {
 	) ) );
 }
 add_action('customize_register', 'ns_minimal_theme_customizer');
+endif;
 
 /**
  * Customizer Apply Style

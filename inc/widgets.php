@@ -68,10 +68,10 @@ class ns_minimal_social extends WP_Widget {
 
 		if ( $feed )
 			echo '<span><a href="' . esc_url($feed) . '" title="' . esc_attr( 'Feed', 'ns-minimal' ) . '" class="social social-feed" target="' . esc_attr( '_blank', 'ns-minimal' ) . '"></a></span>';
-
+		// @codingStandardsIgnoreStart
 		if ( $email )
 			echo '<span><a href="mailto:' . $email . '" title="' . esc_attr( 'Email', 'ns-minimal' ) . '" class="social social-email" target="' . esc_attr( '_blank', 'ns-minimal' ) . '"></a></span>';
-
+		// @codingStandardsIgnoreEnd
 		if ( $linkedin )
 			echo '<span><a href="' . esc_url($linkedin) . '" title="' . esc_attr( 'Linkedin', 'ns-minimal' ) . '" class="social social-linkedin" target="' . esc_attr( '_blank', 'ns-minimal' ) . '"></a></span>';
 
@@ -283,12 +283,12 @@ class ns_minimal_social extends WP_Widget {
 			<label for="<?php echo esc_attr( $this->get_field_id( 'tumblr' ) ); ?>"><?php esc_html_e('Tumblr:','ns-minimal'); ?></label>
 			<input id="<?php echo esc_attr( $this->get_field_id( 'tumblr' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'tumblr' ) ); ?>" value="<?php echo esc_url( $tumblr ); ?>" style="width:100%;" />
 		</p>
-
+    <?php // @codingStandardsIgnoreStart ?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'wordpress' ) ); ?>"><?php esc_html_e('WordPress:','ns-minimal'); ?></label>
 			<input id="<?php echo esc_attr( $this->get_field_id( 'wordpress' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'WordPress' ) ); ?>" value="<?php echo esc_url( $wordpress ); ?>" style="width:100%;" />
 		</p>
-
+		<?php // @codingStandardsIgnoreEnd ?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'soundcloud' ) ); ?>"><?php esc_html_e('Soundcloud:','ns-minimal'); ?></label>
 			<input id="<?php echo esc_attr( $this->get_field_id( 'soundcloud' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'soundcloud' ) ); ?>" value="<?php echo esc_url( $soundcloud ); ?>" style="width:100%;" />
@@ -304,10 +304,12 @@ class ns_minimal_social extends WP_Widget {
 
 }
 
+if ( ! function_exists( 'ns_minimal_social_register' ) ) :
 function ns_minimal_social_register() {
     register_widget( 'ns_minimal_social' );
 }
 add_action( 'widgets_init', 'ns_minimal_social_register' );
+endif;
 
 /**
  * About Widget
@@ -342,7 +344,7 @@ class ns_minimal_about extends WP_Widget {
 
 				if( $hook != 'widgets.php' )
 				return;
-				
+
         wp_enqueue_script('upload_media_widget', get_template_directory_uri() . '/js/upload-media.js', array('jquery'));
 
         wp_enqueue_style('thickbox');
@@ -464,7 +466,9 @@ class ns_minimal_about extends WP_Widget {
 
 }
 
+if ( ! function_exists( 'ns_minimal_about_register' ) ) :
 function ns_minimal_about_register() {
     register_widget( 'ns_minimal_about' );
 }
 add_action( 'widgets_init', 'ns_minimal_about_register' );
+endif;

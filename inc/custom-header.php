@@ -13,6 +13,7 @@
  * @uses ns_minimal_admin_header_style()
  * @uses ns_minimal_admin_header_image()
  */
+if ( ! function_exists( 'ns_minimal_custom_header_setup' ) ) :
 function ns_minimal_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'ns_minimal_custom_header_args', array(
 		'default-image'          => '',
@@ -26,13 +27,14 @@ function ns_minimal_custom_header_setup() {
 	) ) );
 }
 add_action( 'after_setup_theme', 'ns_minimal_custom_header_setup' );
-
+endif;
 
 /**
  * Styles the header image and text displayed on the blog.
  *
  * @see test_custom_header_setup().
  */
+if ( ! function_exists( 'ns_minimal_header_style' ) ) :
 function ns_minimal_header_style() {
 	$header_text_color = get_header_textcolor();
 
@@ -68,12 +70,14 @@ function ns_minimal_header_style() {
 	</style>
 	<?php
 }
+endif;
 
 /**
 * Styles the header image displayed on the Appearance > Header admin panel.
 *
 * @see ns_minimal_custom_header_setup().
 */
+if ( ! function_exists( 'ns_minimal_admin_header_style' ) ) :
 function ns_minimal_admin_header_style() {
 ?>
 	<style type="text/css">
@@ -94,12 +98,14 @@ function ns_minimal_admin_header_style() {
 	</style>
 <?php
 }
+endif;
 
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
  * @see ns_minimal_custom_header_setup().
  */
+if ( ! function_exists( 'ns_minimal_admin_header_image' ) ) :
 function ns_minimal_admin_header_image() {
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 ?>
@@ -112,3 +118,4 @@ function ns_minimal_admin_header_image() {
 	</div>
 <?php
 }
+endif;
